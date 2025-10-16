@@ -12,7 +12,7 @@ while(numeroImpar % 2 == 0):
 
 # El triangulo debe de ser centrado y no como sale, corregir
 
-for i in range(numeroImpar):
-    for j in range(i+1):
-        print ("*", end="");
-    print()
+for i in range(numeroImpar - 1):
+    espa = numeroImpar - i;
+    aste = 2 * i - 1;
+    print(" " * espa + "*" * aste);
