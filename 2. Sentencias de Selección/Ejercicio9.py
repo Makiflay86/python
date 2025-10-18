@@ -12,25 +12,9 @@
 
 
 
-# REVISAR
-# REVISAR
-# REVISAR
-# REVISAR
-# REVISAR
+year = int(input("Introduce un año (YYYY): "))
 
-
-
-
-print ("-- Programa que recoge un año y dice si es bisiesto o no --");
-
-year = int(input("Introduce un año(YYYY): "));
-
-if (year % 4 == 0):
-    if (year % 100 == 0 and year % 400 == 0):
-        print ("El año ", year, " es bisiesto.");
-    else:
-        print ("El año ", year, " no es bisiesto.")
-    print ("El año ", year, " es bisiesto.");
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+    print(f"El año {year} es bisiesto.")
 else:
-    print ("El año ", year, " no es bisiesto.");
-
+    print(f"El año {year} no es bisiesto.")
