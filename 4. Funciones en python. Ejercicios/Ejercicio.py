@@ -11,15 +11,18 @@ h) Salir """
 
 import math
 
-""" print ("a) Mostrar un rombo")
-print ("b) Adivinar un número")
-print ("c) Resolver una ecuación de segundo grado")
-print ("d) Tabla de números")
-print ("e) Cálculo del número factorial de un número")
-print ("f) Cálculo de un número de la sucesión de Fibonacci")
-print ("g) Tabla de multiplicar")
-print ("h) Salir")
-opcion = input("Opción: "); """
+opcion = "";
+
+while (opcion != "h"):
+    print ("a) Mostrar un rombo")
+    print ("b) Adivinar un número")
+    print ("c) Resolver una ecuación de segundo grado")
+    print ("d) Tabla de números")
+    print ("e) Cálculo del número factorial de un número")
+    print ("f) Cálculo de un número de la sucesión de Fibonacci")
+    print ("g) Tabla de multiplicar")
+    print ("h) Salir")
+    opcion = (input("Opción: ")).lower();
 
 
 
