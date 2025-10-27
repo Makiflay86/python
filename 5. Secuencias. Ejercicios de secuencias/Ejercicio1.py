@@ -7,87 +7,76 @@
  """
 
 
-
 def pedirNumero():
-    salir = False
     listaNumero = []
-    while (not salir):
+    while True: 
         try:
-            entrada = input("Introduce un número(0=salir): ")
+            entrada = input("Introduce un número (0 => salir): ")
             numero = int(entrada)
-            if (numero == 0):
-                salir = True
+            if numero == 0:
+                break 
             else:
                 listaNumero.append(numero)
-        except:
-            print("ERROR: Debes introducir un número entero")
+        except ValueError: 
+            print("ERROR: Debes introducir un número entero.")
             print("")
-            salir = False
     return listaNumero
 
 
-def menu():
-    print("")
-    print("-- Menú --")
+def mostrar_menu():
+    """Imprime el menú de opciones."""
+    print("\n-- Menú --")
     print("a. En el orden en que se introdujeron.")
     print("b. En orden creciente.")
     print("c. En orden decreciente.")
     print("d. Salir.")
 
 
-
 def leerOpcion():
+    """Pide y valida la opción del menú."""
     opciones_validas = set("abcd")
-    salir = False
-    while (not salir):
+    while True:
         opcion = input("Opción: ").lower()
-        if (opcion in opciones_validas):
-            salir = True
+        if opcion in opciones_validas:
+            return opcion
         else:
-            salir = False
-            print("ERROR: Opción incorrecta(a-d)")
+            print("ERROR: Opción incorrecta (a-d).")
             print("")
-    return opcion
 
 
-
-salir = False
 numeros = pedirNumero()
 
-while (not salir):
-    print(menu())
-    opcion = leerOpcion()
-    if (opcion == "d"):
-        salir = True
-    elif (opcion == "a"):
-        print(" ")
-        print("a. En el orden en que se introdujeron.")
-        for i in range(len(numeros)):
-            print(numeros[i], end=" ")
-        print(" ")
-        salir = False
-    elif (opcion == "b"):
-        print(" ")
-        print("b. En orden creciente.")
-        for i in range(len(numeros)):
-            numeros.sort()
-            print(numeros[i], end=" ")
-        print(" ")
-        salir = False
-    elif (opcion == "c"):
-        print(" ")
-        print("c. En orden decreciente.")
-        for i in range(len(numeros)):
-            numeros.sort(reverse=True)
-            print(numeros[i], end=" ")
-        print(" ")
-        salir = False
-    else:
-        print("ERROR: Elige una opción correcta")
-        print(" ")
-        salir = False
+if not numeros:
+    print("\nNo se introdujo ningún número. Finalizando programa...")
 else:
-    print(" ")
+    salir = False
+    
+    numeros_originales = list(numeros) 
+
+    while not salir:
+        mostrar_menu()
+        opcion = leerOpcion()
+
+        print("\n--- Resultado ---")
+        if opcion == "d":
+            salir = True
+        
+        elif opcion == "a":
+            print("a. En el orden en que se introdujeron:")
+            print(*numeros_originales)
+            
+        elif opcion == "b":
+            numeros_creciente = sorted(numeros_originales)
+            print("b. En orden creciente:")
+            print(*numeros_creciente)
+
+        elif opcion == "c":
+            numeros_decreciente = sorted(numeros_originales, reverse=True)
+            print("c. En orden decreciente:")
+            print(*numeros_decreciente)
+
+        print("-----------------\n")
+
     print("FINALIZANDO PROGRAMA...")
     
 
@@ -96,40 +85,3 @@ else:
 
 
 
-
-
-""" 
-salir = False
-listaNumero = []
-while (not salir):
-    try:
-        entrada = input("Introduce un número(0=salir): ")
-        numero = int(entrada)
-        if (numero == 0):
-            salir = True
-        else:
-            listaNumero.append(numero)
-    except:
-        print("ERROR: Debes introducir un número entero")
-        salir = False
-
-
-print("a. En el orden en que se introdujeron.")
-for i in range(len(listaNumero)):
-    print(listaNumero[i], end=" ")
-
-print("")
-print("")
-
-print("b. En orden creciente.")
-for i in range(len(listaNumero)):
-    listaNumero.sort()
-    print(listaNumero[i], end=" ")
-
-print("")
-print("")
-
-print("c. En orden decreciente.")
-for i in range(len(listaNumero)):
-    listaNumero.sort(reverse=True)
-    print(listaNumero[i], end=" ") """
