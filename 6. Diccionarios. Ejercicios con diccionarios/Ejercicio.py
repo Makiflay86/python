@@ -32,7 +32,7 @@ def listado():
 def listadoAZ():
     print("")
     print("-- Listado de nombres y sus teléfonos (A-Z) --")
-    for nombre in sorted(lista):
+    for nombre in sorted(lista, key=lambda x: x[0].lower()):
         print(f"Nombre: {nombre} - Teléfono: {lista[nombre]}")
 
     print("")
