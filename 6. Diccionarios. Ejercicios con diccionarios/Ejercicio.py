@@ -32,7 +32,7 @@ def listado():
 def listadoAZ():
     print("")
     print("-- Listado de nombres y sus teléfonos (A-Z) --")
-    for nombre in sorted(lista, key=lambda x: x[0].lower()):
+    for nombre in sorted(lista, key=lambda x: x[0].lower()): # El key=lamba sirve para ordenar la lista ignorando las mayusculas, porque le asigna a la letra inicial en minúscula (lower())
         print(f"Nombre: {nombre} - Teléfono: {lista[nombre]}")
 
     print("")
