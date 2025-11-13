@@ -23,25 +23,25 @@ def opcion():
 
             match op:
                 case "a":
-                    salir = listado()
+                    salir = False
                     
                 case "b":
-                    salir = listadoAZ()
+                    salir = False
 
                 case "c":
-                    salir = addUser()
+                    salir = False
 
                 case "d":
-                    salir = modTelef()
+                    salir = False
                 
                 case "e":
-                    salir = searchTelef()
+                    salir = False
                 
                 case "f":
-                    salir = delUser()
+                    salir = False
 
                 case "g":
-                    salir = delListTelef()
+                    salir = False
 
                 case "h":
                     salir = True
