@@ -57,6 +57,13 @@ def pedir_telefono():
 
 
 
+# mostrar información
+def toString(nombre, edad, direccion, telefono):
+    return (f"{nombre} tiene {edad} años, vive en {direccion} y su número de teléfono es {telefono}.")
+
+
+
+
 # =======================================================
 # Ejercicio 2
 # =======================================================
@@ -67,27 +74,12 @@ def ejercicio2():
     print("-- Ejercicio 2 --")
     print("========================================================================")
     dic = { # Datos precargado para testear
-        "Mario": {
-            "edad": 18,
-            "direccion": "Cantabria",
-            "telefono": "8777"
-        },
-        "Lucía": {
-            "edad": 25,
-            "direccion": "Sevilla",
-            "telefono": "1234"
-        },
-        "Carlos": {
-            "edad": 30,
-            "direccion": "Valencia",
-            "telefono": "5678"
-        },
-        "Ana": {
-            "edad": 22,
-            "direccion": "Barcelona",
-            "telefono": "9101"
-        }
+    "Mario": (18, "Cantabria", "8777"),
+    "Lucía": (25, "Sevilla", "1234"),
+    "Carlos": (30, "Valencia", "5678"),
+    "Ana": (22, "Barcelona", "9101")
     }
+
 
     salir = False
     while not salir:
@@ -111,7 +103,8 @@ def ejercicio2():
             else:
                 print("")
                 for nombre, (edad, direccion, telefono) in dic.items():
-                    print(f"{nombre} tiene {edad} años, vive en {direccion} y su número de teléfono es {telefono}.")
+                    print(toString(nombre, edad, direccion, telefono))
+
 
                 print("")
                 input("Pulsa enter para continuar...")
@@ -219,7 +212,8 @@ def opcion():
 
 
 
-""" Preguntaremos al usuario el ejercicio que quiere realizar """
+""" TESTING """
+
 salir = False
 while not salir:
     try:
