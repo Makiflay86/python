@@ -154,7 +154,29 @@ def contarCaracter():
     salir = False
     while not salir:
         try:
+            palabra = input("Introduce una palabra: ")
+            palabra_lower = palabra.lower()
+            conteo_caracteres = {}
+            caracter_mas_comun = ""
+            max_apariciones = 0
 
+            # 1. Crear el diccionario de conteo
+            for caracter in palabra_lower:
+                if caracter in conteo_caracteres:
+                    conteo_caracteres[caracter] += 1
+                else:
+                    conteo_caracteres[caracter] = 1
+
+            # 2. Encontrar el carácter con más apariciones
+            for caracter, apariciones in conteo_caracteres.items():
+                if apariciones > max_apariciones:
+                    max_apariciones = apariciones
+                    caracter_mas_comun = caracter
+
+            print("\n--- RESULTADOS ---")
+            print("Diccionario de Conteo:", conteo_caracteres)
+            print(f"El carácter con más apariciones es '{caracter_mas_comun}' con {max_apariciones} apariciones.")
+            print("------------------")
 
             print("")
             input("Enter para continuar...")
@@ -187,7 +209,7 @@ def opcion():
     salir = False
     while not salir:
         try:
-            op = input("Opción: ")
+            op = input("Opción: ").lower()
             print("")
 
             match op:
